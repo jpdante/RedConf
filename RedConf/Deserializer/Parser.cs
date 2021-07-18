@@ -1,24 +1,34 @@
-﻿using RedConf.Core;
+﻿using System.Collections.Generic;
+using RedConf.Core;
+using RedConf.Core.Statements;
 
 namespace RedConf.Deserializer {
     public class Parser {
 
         private readonly TokenList _tokens;
+        private StatementList _currentBlock;
+        private bool _running;
 
         public Parser(TokenList tokenList) {
             _tokens = tokenList;
         }
 
+        public StatementList GetList() {
+            Token token = null;
+            _currentBlock = new StatementList();
+            _running = true;
+            while (_running) {
+                try {
+                    token = _tokens.GetToken();
+                } catch {
+                    // ignored
+                }
+                if (token == null) continue;
+
+            }
+        }
+
         /*
-        private BlockStatement _currentBlock;
-        private Stack<BlockStatement> _blockStack;
-        private List<IStatement> _tree;
-        private bool _running;
-        private ulong _functionId;
-
-        public delegate void AddImportHandler(object sender, string import);
-        public event AddImportHandler OnAddImportHandler;
-
         public Task<List<IStatement>> Process() {
             Token token = null;
             _functionId = 0;

@@ -1,11 +1,11 @@
 ﻿using RedConf.Abstractions;
 
 namespace RedConf.Core.Statements {
-    public class ObjectAssignStatement : IStatement {
+    public class AssignStatement : IStatement {
         public string Ident;
-        public IStatement Value;
+        public IExpression Value;
 
-        public ObjectAssignStatement(string ident, IStatement value) {
+        public AssignStatement(string ident, IExpression value) {
             Ident = ident;
             Value = value;
         }
