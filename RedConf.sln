@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedConf", "RedConf\RedConf.csproj", "{CE6981FA-C34E-41C8-922A-E6DA57B15373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedConf.Tests", "RedConf.Tests\RedConf.Tests.csproj", "{4E9C3257-8C4B-4218-A1C9-5F8F4F72AD58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE6981FA-C34E-41C8-922A-E6DA57B15373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6981FA-C34E-41C8-922A-E6DA57B15373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6981FA-C34E-41C8-922A-E6DA57B15373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6981FA-C34E-41C8-922A-E6DA57B15373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9C3257-8C4B-4218-A1C9-5F8F4F72AD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9C3257-8C4B-4218-A1C9-5F8F4F72AD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9C3257-8C4B-4218-A1C9-5F8F4F72AD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9C3257-8C4B-4218-A1C9-5F8F4F72AD58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B782F25-BD0C-412F-8A52-14486C16D20E}
+	EndGlobalSection
+EndGlobal
