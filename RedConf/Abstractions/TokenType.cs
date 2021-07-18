@@ -15,8 +15,8 @@ namespace RedConf.Abstractions {
         BooleanLiteral,
 
         // Data Management
-        [Token("\\=", 1)]
-        Equal,
+        [Token("\\:", 1)]
+        Assign,
 
         // Structure
         [Token("[a-zA-Z_][a-zA-Z0-9_]*", 1)]

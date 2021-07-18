@@ -1,0 +1,8 @@
+﻿Test1: "Alo isso é uma string"
+Test2: 483785
+Test3: true
+Test4: {
+    Test1: "Alo isso é uma string"
+    Test2: 483785
+    Test3: true
+}

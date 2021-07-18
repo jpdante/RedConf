@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using RedConf.Abstractions;
 using RedConf.Core;
+using RedConf.Core.Statements;
 using RedConf.Deserializer;
 
 namespace RedConf {
     public static partial class RedConf {
-
         public static T Deserialize<T>(string input) {
             return default(T);
         }
@@ -15,10 +15,10 @@ namespace RedConf {
         public static T Deserialize<T>(Stream stream) {
             using var streamReader = new StreamReader(stream);
             string input = streamReader.ReadToEnd();
-            return default(T);
+            return Deserialize<T>(input);
         }
 
-        public static void GetTokens(string input) {
+        public static StatementList GetTokens(string input) {
             var lexer = new Lexer(input);
             var tokens = new List<Token>();
             while (true) {
@@ -33,6 +33,7 @@ namespace RedConf {
             tokens.Add(new Token(TokenType.Eof));
             var tokenList = new TokenList(tokens);
             var parser = new Parser(tokenList);
+            return parser.GetStatementList();
         }
     }
 }

@@ -2,10 +2,14 @@
 
 namespace RedConf.Core.Expressions {
     public class StringLiteralExpression : IExpression {
-        public string Value;
+        public readonly string Value;
 
         public StringLiteralExpression(string value) {
             Value = value;
+        }
+
+        public override string ToString() {
+            return Value;
         }
     }
 }

@@ -5,4 +5,18 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Config.cnf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="config.cnf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedConf\RedConf.csproj" />
+  </ItemGroup>
+
 </Project>
