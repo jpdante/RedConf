@@ -1,8 +1,26 @@
-﻿Test1: "Alo isso é uma string"
-Test2: 483785
+﻿Test1: "String"
+Test2: 1234
 Test3: true
-Test4: {
-    Test1: "Alo isso é uma string"
-    Test2: 483785
+Test4: [ "String 1", "String 2", "String 3" ]
+    Test1: "String"
+    Test2: 1234
     Test3: true
+    Test4: [ "String 1", "String 2", "String 3" ]
 }
+Test6: [
+    {
+        Test1: "String"
+        Test2: 1234
+        Test3: true
+    },
+    {
+        Test1: "String"
+        Test2: 1234
+        Test3: true
+    },
+    {
+        Test1: "String"
+        Test2: 1234
+        Test3: true
+    }
+]

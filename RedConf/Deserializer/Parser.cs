@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using RedConf.Abstractions;
+﻿using RedConf.Abstractions;
 using RedConf.Core;
 using RedConf.Core.Expressions;
 using RedConf.Core.Statements;
@@ -57,6 +56,8 @@ namespace RedConf.Deserializer {
                 returnExpression = new BooleanLiteralExpression(bool.Parse(token.Value));
             } else if (token.TokenType == TokenType.StartBlock) {
                 returnExpression = ParseBlockExpression();
+            } else if (token.TokenType == TokenType.StartArray) {
+                returnExpression = ParseArrayExpression();
             }
 
             return returnExpression;
@@ -76,10 +77,24 @@ namespace RedConf.Deserializer {
                     _tokenList.Position--;
                     blockExpression.AddStatement(ParseAssign());
                 } else if (token.TokenType == TokenType.EndBlock) {
-                    _running = false;
+                    break;
                 }
             }
             return blockExpression;
+        }
+
+        public IExpression ParseArrayExpression() {
+            var arrayExpression = new ArrayExpression();
+            while (_running) {
+                var peekToken = _tokenList.Peek();
+                if (peekToken.TokenType == TokenType.Comma) {
+                    _tokenList.Position++;
+                    continue;
+                }
+                if (peekToken.TokenType == TokenType.EndArray) break;
+                arrayExpression.Expressions.Add(ParseExpression());
+            }
+            return arrayExpression;
         }
     }
 }
